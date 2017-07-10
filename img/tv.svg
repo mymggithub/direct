@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="210mm" height="297mm" version="1.1" viewBox="0 0 210 297" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <linearGradient id="d" x1="383.57" x2="378.57" y1="770.38" y2="346.09" gradientTransform="matrix(.1021 0 0 .046169 61.452 146.04)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#b3b3b3" offset="0"/>
+   <stop stop-color="#e6e6e6" offset=".35531"/>
+   <stop stop-color="#b3b3b3" offset=".47979"/>
+   <stop stop-color="#e6e6e6" offset=".58095"/>
+   <stop stop-color="#ccc" offset="1"/>
+  </linearGradient>
+  <linearGradient id="e" x1="15.591" x2="187.57" y1="86.467" y2="139.38" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#4d4d4d" offset="0"/>
+   <stop stop-color="#4d4d4d" offset=".18822"/>
+   <stop stop-color="#999" offset=".2307"/>
+   <stop stop-color="#4d4d4d" offset=".30714"/>
+   <stop stop-color="#4d4d4d" offset=".87394"/>
+   <stop stop-color="#666" offset=".92846"/>
+   <stop stop-color="#4d4d4d" stop-opacity=".97642" offset="1"/>
+  </linearGradient>
+  <linearGradient id="f" x1="72.666" x2="127.47" y1="204.21" y2="204.21" gradientTransform="translate(0 -22.225)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#b3b3b3" offset="0"/>
+   <stop stop-color="#e6e6e6" offset=".17216"/>
+   <stop stop-color="#b3b3b3" offset=".30112"/>
+   <stop stop-color="#ccc" offset="1"/>
+  </linearGradient>
+ </defs>
+ <path d="m89.385 161.95c3.9376 6.3939 3.2784 12.91-5.9805 19.655h33.33c-9.259-6.7449-9.9181-13.261-5.9805-19.655h-13.055z" fill="url(#d)"/>
+ <rect x="13.324" y="63.411" width="173.49" height="103.57" ry="4.5357" fill="#666"/>
+ <path d="m17.859 63.411c-2.5128 0-4.5356 2.0229-4.5356 4.5356v94.494c0 2.5128 2.0229 4.5356 4.5356 4.5356h164.42c2.5128 0 4.5356-2.0229 4.5356-4.5356v-94.494c0-2.5128-2.0228-4.5356-4.5356-4.5356zm8.401 5.2917h147.62c2.256 0 4.0721 1.8161 4.0721 4.0721v84.838c0 2.256-1.8161 4.0726-4.0721 4.0726h-147.62c-2.256 0-4.0721-1.8166-4.0721-4.0726v-84.838c0-2.256 1.8161-4.0721 4.0721-4.0721z" fill="url(#e)"/>
+ <rect x="72.666" y="180.28" width="54.807" height="3.4018" ry="1.3084" fill="url(#f)"/>
+ <path transform="scale(.26458)" d="m331.11 239.66l-131.93 391.43h489.76c9.4972 0 17.145-7.6454 17.145-17.143v-357.14c0-9.4972-7.6474-17.143-17.145-17.143h-357.82z" fill="#b3b3b3" fill-opacity=".14151"/>
+</svg>
