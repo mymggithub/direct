@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Direct TV Chart</title>
-	<script src="jquery-3.2.1.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<!-- Latest compiled and minified CSS -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -12,26 +12,167 @@
 
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<script src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+
+	<style type="text/css">
+		.col-centered{
+			float: none;
+			margin: 0 auto;
+		}
+		.selected-tv{
+			background: lightgreen;
+		}
+		.box{
+			margin-top: 1em;			
+		}
+		.box>div{
+		}
+		.cable-color{
+			background: grey;
+		}
+		.features-color{
+			background: black;
+			color: grey;
+		}
+		.direct-color{
+			background: #337ab7;
+			color: white;
+		}
+		.blue-row div{
+			background: lightblue;
+		}
+		.hidetxt{
+			display:none;
+		}	
+	</style>
 </head>
 <body>
 	<div class="container">
 		<div class="row">
-			<img src="img/logo.svg" class="col-sm-3">
+			<div class="col-sm-3">
+				<div class="row">
+					<img src="img/comcast_logo.svg" class="col-sm-12">
+				</div>
+				<div class="row">
+					<select class="col-sm-11 col-sm-offset-1">
+						<option value="concast">Concast</option>
+						<option value="uverse">Uverse</option>
+						<option value="dish">Dish</option>
+					</select>
+				</div>				
+			</div>
+
+			<img src="img/direct_logo.svg" class="col-sm-3 col-sm-offset-3">
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
-				<div class="row">
-					<img src="img/tv.svg" class="col-sm-6">
-					<img src="img/tv.svg" class="col-sm-6">
+				<div class="row col-centered">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
 				</div>
 			</div>
 			<div class="col-sm-6">
-				<div class="row">
-					<img src="img/tv.svg" class="col-sm-6">
-					<img src="img/tv.svg" class="col-sm-6">
+				<div class="row col-centered">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
+					<img src="img/tv.svg" class="col-sm-6 img-rounded img-thumbnail tv">
 				</div>
 			</div>
 		</div>
 	</div>
+<div class="container-fluid text-center">
+	<div class="row text-uppercase box">
+		<div class="col-sm-offset-1 col-sm-3 cable-color">
+			<h2>Cable</h2>
+		</div>
+		<div class="col-sm-4 features-color">
+			<h2>Features</h2>
+		</div>
+		<div class="col-sm-3 direct-color">
+			<h2>Direct TV</h2>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-3">
+			<h3></h3>
+		</div>
+		<div class="col-sm-4">
+			<h3>Siultaneous Recordings</h3>
+		</div>
+		<div class="col-sm-3">
+			<h3>(5)</h3>
+		</div>
+	</div>
+	<div class="row blue-row">
+		<div class="col-sm-offset-1 col-sm-3">
+			<h3>&nbsp;</h3>
+		</div>
+		<div class="col-sm-4">
+			<h3>Recording Hours</h3>
+		</div>
+		<div class="col-sm-3">
+			<h3>800</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-3">
+			<h3></h3>
+		</div>
+		<div class="col-sm-4">
+			<h3># of Rooms That Can Record</h3>
+		</div>
+		<div class="col-sm-3">
+			<h3></h3>
+		</div>
+	</div>
+	<div class="row blue-row">
+		<div class="col-sm-offset-1 col-sm-3">
+			<h3>&nbsp;</h3>
+		</div>
+		<div class="col-sm-4">
+			<h3>Resolution</h3>
+		</div>
+		<div class="col-sm-3 type">
+			<h3>&nbsp;</h3>
+			<span class="hidetxt">1080 - 4K</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-offset-1 col-sm-3">
+			<h3></h3>
+		</div>
+		<div class="col-sm-4">
+			<h3>Other</h3>
+		</div>
+		<div class="col-sm-3">
+			<h3></h3>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript">
+		(function($){
+			$(".tv").click(function(event) {
+			$(this).toggleClass('selected-tv');
+
+		});
+		})(jQuery);
+		$('.type').click(function(event) {
+			data = $(this).find('.hidetxt').text();
+			$(this).find('h3').typeIt({
+				strings: data,
+				speed: 50,
+				autoStart: false
+			});
+			$(this).find('h3').text(data)
+		});
+	</script>
 </body>
 </html>
