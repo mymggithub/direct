@@ -44,7 +44,10 @@
 		}
 		.hidetxt{
 			display:none;
-		}	
+		}
+		.logo{
+			max-height: 5em; 
+		}
 	</style>
 </head>
 <body>
@@ -52,18 +55,19 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<div class="row">
-					<img src="img/comcast_logo.svg" class="col-sm-12">
+					<img src="img/comcast_logo.svg" class="col-sm-12 comp logo">
 				</div>
 				<div class="row">
-					<select class="col-sm-11 col-sm-offset-1">
-						<option value="concast">Concast</option>
+					<select class="col-sm-11 col-sm-offset-1 comp">
+						<option value="">Select</option>
+						<option value="comcast">Comcast</option>
 						<option value="uverse">Uverse</option>
 						<option value="dish">Dish</option>
 					</select>
 				</div>				
 			</div>
 
-			<img src="img/direct_logo.svg" class="col-sm-3 col-sm-offset-3">
+			<img src="img/direct_logo.svg" class="col-sm-3 col-sm-offset-3 logo">
 		</div>
 		<div class="row">
 			<div class="col-sm-6">
@@ -101,77 +105,106 @@
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-offset-1 col-sm-3">
-			<h3></h3>
+		<div class="col-sm-offset-1 col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt sr"></span>
 		</div>
 		<div class="col-sm-4">
 			<h3>Siultaneous Recordings</h3>
 		</div>
-		<div class="col-sm-3">
-			<h3>(5)</h3>
+		<div class="col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt">5</span>
 		</div>
 	</div>
 	<div class="row blue-row">
-		<div class="col-sm-offset-1 col-sm-3">
-			<h3>&nbsp;</h3>
+		<div class="col-sm-offset-1 col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt hr"></span>
 		</div>
 		<div class="col-sm-4">
 			<h3>Recording Hours</h3>
 		</div>
-		<div class="col-sm-3">
-			<h3>800</h3>
+		<div class="col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt">800</span>
 		</div>
 	</div>
 	<div class="row">
-		<div class="col-sm-offset-1 col-sm-3">
-			<h3></h3>
+		<div class="col-sm-offset-1 col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt rr"></span>
 		</div>
 		<div class="col-sm-4">
 			<h3># of Rooms That Can Record</h3>
 		</div>
-		<div class="col-sm-3">
-			<h3></h3>
+		<div class="col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt">4</span>
 		</div>
 	</div>
 	<div class="row blue-row">
-		<div class="col-sm-offset-1 col-sm-3">
-			<h3>&nbsp;</h3>
+		<div class="col-sm-offset-1 col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt res"></span>
 		</div>
 		<div class="col-sm-4">
 			<h3>Resolution</h3>
 		</div>
 		<div class="col-sm-3 type">
-			<h3>&nbsp;</h3>
+			<h3><strong class="display">&nbsp;</strong></h3>
 			<span class="hidetxt">1080 - 4K</span>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-sm-offset-1 col-sm-3">
-			<h3></h3>
+			<textarea></textarea>
 		</div>
 		<div class="col-sm-4">
 			<h3>Other</h3>
 		</div>
-		<div class="col-sm-3">
-			<h3></h3>
+		<div class="col-sm-3 type">
+			<h3><strong class="display">&nbsp;</strong></h3>
+			<span class="hidetxt">72 Hours of Replay, and 20,000 of movies and shows. 85% of it is free.</span>
 		</div>
 	</div>
 </div>
 	<script type="text/javascript">
+		data = '{"internet": [{"speed":"3-45mb","price":30},{"speed":"up to 75mb","price":50},{"speed":"up to 1000mb","price":70}],"pack": {"select":{"sell":50,"retail":90},"entertainment":{"sell":55,"retail":101},"choice":{"sell":67.29,"retail":115},"xtra":{"sell":77.29,"retail":124},"ultimate":{"sell":82.29,"retail":134},"premier":{"sell":132.29,"retail":181}},"comp": {"comcast":{"res":"720","shows":2,"hr":100},"uverse":{"res":"720","shows":4,"hr":200},"dish":{"res":"720-1080","shows":2,"hr":100},"direct-tv":{"res":"1060-4k","shows":5,"hr":800}}}';
+		jdata = JSON.parse(data);
+
+		$( "select" ).change(function() {
+			$(".res").text("0");
+			$(".sr").text("0");
+			$(".hr").text("0");
+			name = $(this).val();
+			$("img.comp").attr("src","img/"+name+"_logo.svg") ;
+			$(".res").text(jdata.comp[name].res);
+			$(".sr").text(jdata.comp[name].shows);
+			$(".hr").text(jdata.comp[name].hr);
+		});
+
 		(function($){
 			$(".tv").click(function(event) {
-			$(this).toggleClass('selected-tv');
-
-		});
+				$(this).toggleClass('selected-tv');
+				$(".rr").text($(".selected-tv").length);
+			});
 		})(jQuery);
 		$('.type').click(function(event) {
-			data = $(this).find('.hidetxt').text();
-			$(this).find('h3').typeIt({
-				strings: data,
-				speed: 50,
-				autoStart: false
-			});
-			$(this).find('h3').text(data)
+			hiddendata = $(this).find('.hidetxt').text();
+			if (hiddendata!="") {
+				$(this).find('.display').typeIt({
+					strings: hiddendata,
+					speed: 50,
+				});
+				$(this).find('.display').text(hiddendata);
+			}
+			
+			
+		});
+		$.getJSON('comp.json', function(json, textStatus) {
+				console.log(json);
+				console.log(textStatus);
 		});
 	</script>
 </body>
