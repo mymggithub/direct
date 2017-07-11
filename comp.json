@@ -1,1 +1,69 @@
-{"internet": [{"speed":"3-45mb","price":30},{"speed":"up to 75mb","price":50},{"speed":"up to 1000mb","price":70}],"pack": {"select":{"sell":50,"retail":90},"entertainment":{"sell":55,"retail":101},"choice":{"sell":67.29,"retail":115},"xtra":{"sell":77.29,"retail":124},"ultimate":{"sell":82.29,"retail":134},"premier":{"sell":132.29,"retail":181}},"comp": {"comcast":{"res":"720","shows":2,"hr":100},"uverse":{"res":"720","shows":4,"hr":200},"dish":{"res":"720-1080","shows":2,"hr":100},"direct-tv":{"res":"1060-4k","shows":5,"hr":800}}}
+{
+  "internet": [
+    {
+      "speed": "3-45mb",
+      "price": 30
+    },
+    {
+      "speed": "up to 75mb",
+      "price": 50
+    },
+    {
+      "speed": "up to 1000mb",
+      "price": 70
+    }
+  ],
+  "pack": {
+    "select": {
+      "sell": 50,
+      "retail": 90
+    },
+    "entertainment": {
+      "sell": 55,
+      "retail": 101
+    },
+    "choice": {
+      "sell": 67.29,
+      "retail": 115
+    },
+    "xtra": {
+      "sell": 77.29,
+      "retail": 124
+    },
+    "ultimate": {
+      "sell": 82.29,
+      "retail": 134
+    },
+    "premier": {
+      "sell": 133.29,
+      "retail": 187
+    }
+  },
+  "comp": {
+    "comcast": {
+      "res": "720",
+      "shows": 2,
+      "hr": 100
+    },
+    "xfinity": {
+      "res": "720",
+      "shows": 4,
+      "hr": 400
+    },
+    "uverse": {
+      "res": "720",
+      "shows": 4,
+      "hr": 200
+    },
+    "dish": {
+      "res": "720-1080",
+      "shows": 2,
+      "hr": 100
+    },
+    "direct-tv": {
+      "res": "1060-4k",
+      "shows": 5,
+      "hr": 800
+    }
+  }
+}
